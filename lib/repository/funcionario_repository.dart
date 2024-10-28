@@ -6,7 +6,7 @@ class FuncionarioRepository {
 
   Future<List<FuncionarioModels>> getAllFuncionarios() async {
     final connection = await _db.connect();
-    final result = await connection.query('SELECT * FROM funcionario;');
+    final result = await connection.query('SELECT * FROM funcionarios;');
 
     final funcionarios = result
         .map((e) => FuncionarioModels(
@@ -24,7 +24,7 @@ class FuncionarioRepository {
   Future<void> addFuncionario(FuncionarioModels funcionario) async {
     final connection = await _db.connect();
     await connection.query(
-        'insert into funcionario (nomeFuncionario, senhaFuncionario, funcaoFuncionario) values (?, ?, ?);',
+        'insert into funcionarios (nomeFuncionario, senhaFuncionario, funcaoFuncionario) values (?, ?, ?);',
         [
           funcionario.nomeFuncionario,
           funcionario.senhaFuncionario,
@@ -37,7 +37,8 @@ class FuncionarioRepository {
   Future<void> deleteFuncionario(int matricula) async {
     final connection = await _db.connect();
     await connection.query(
-        'delete from funcionario where matriculaFuncionario = ?;', [matricula]);
+        'delete from funcionarios where matriculaFuncionario = ?;',
+        [matricula]);
 
     _db.close();
   }

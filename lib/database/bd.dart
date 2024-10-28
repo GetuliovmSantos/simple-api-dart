@@ -11,7 +11,7 @@ class BD {
     if (_connection == null) {
       // Configurações da conexão com o banco de dados
       final settings = ConnectionSettings(
-          host: "127.0.0.1", port: 3306, user: "root", db: "easy-store");
+          host: "127.0.0.1", port: 3306, user: "root", db: "simple-api");
       try {
         // Tenta estabelecer a conexão com o banco de dados
         _connection = await MySqlConnection.connect(settings);
