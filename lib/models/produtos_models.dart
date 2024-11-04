@@ -5,7 +5,7 @@ class ProdutosModels {
   int? idProdutos; // ID do produto (opcional)
   String nomeProduto; // Nome do produto
   String tipoProduto; // Tipo do produto
-  String quantidadeProduto; // Quantidade do produto
+  int quantidadeProduto; // Quantidade do produto
 
   // Construtor da classe ProdutosModels
   ProdutosModels({
