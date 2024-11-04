@@ -24,12 +24,12 @@ CREATE TABLE IF NOT EXISTS `simple-api`.`funcionarios` (
 CREATE TABLE IF NOT EXISTS `simple-api`.`Produtos` (
   -- Coluna de chave primária com auto incremento para o ID do produto
   `idProduto` INT NOT NULL AUTO_INCREMENT,
+  -- Coluna para o nome do produto, não pode ser nula
+  `nomeProduto` VARCHAR(45) NOT NULL,
   -- Coluna para o tipo do produto, não pode ser nula
   `tipoProduto` VARCHAR(45) NOT NULL,
   -- Coluna para a quantidade do produto, não pode ser nula
   `quantidadeProduto` INT NOT NULL,
-  -- Coluna para o nome do produto, não pode ser nula
-  `nomeProduto` VARCHAR(45) NOT NULL,
   -- Define a chave primária da tabela
   PRIMARY KEY (`idProduto`)
 ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
